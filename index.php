@@ -41,7 +41,7 @@ endforeach;
 					<h3 class="h4 mb-5 mb-sm-3 flex-column flex-sm-row d-flex justify-content-center justify-content-sm-start align-items-center gap-3"><span class="badge text-bg-warning fs-5">SR8WXL</span> <small class="text-body-secondary" style="font-size: 0.6rem;">Przepuszcza stacje w obrębie 10km z ikonami /[ oraz />.</small></h3>
 				</div>
 				<div class="col-12 col-xl-6">
-					<h2 class="h5 mb-3 text-center text-sm-start">Nadane: <span class="badge text-bg-warning fs-5"><?php echo $tx; ?></span> pakiety</h2>
+					<h2 class="h5 mb-3 text-center text-sm-start">Nadane pakiety: <span class="badge text-bg-warning fs-5"><?php echo $tx; ?></span></h2>
 					<div class="row d-none d-sm-flex">
 						<div class="col-5 text-body-secondary">
 							Znak
@@ -97,7 +97,7 @@ endforeach;
 				<?php endif; endif; endforeach; ?>
 				</div>
 				<div class="col-12 col-xl-6">
-					<h2 class="h5 mb-3 text-center text-sm-start">Odebrane: <span class="badge text-bg-warning fs-5"><?php echo $rx; ?></span> pakiety</h2>
+					<h2 class="h5 mb-3 text-center text-sm-start">Odebrane pakiety: <span class="badge text-bg-warning fs-5"><?php echo $rx; ?></span></h2>
 					<div class="row d-none d-sm-flex">
 						<div class="col-5 text-body-secondary">
 							Znak
@@ -163,7 +163,6 @@ endforeach;
 		</div>
 	</div>
 </div>
-
 
 <?php function convertUtcToLocal($utcTime) {
     // Utwórz obiekt DateTime dla czasu UTC
