@@ -1,14 +1,13 @@
-
-
 <?php
 $aprs = file("/tmp/aprx-rf.log");
 rsort($aprs);
 foreach ($aprs as $single) :
 	$single = explode(" ", $single);
-	if ($single[6] === 'T') :
+
+	if ($single[6] === 'T' && $single[2] === "SR8WXL") :
 		$tx++;
 	endif;
-	if ($single[6] === 'R') :
+	if ($single[6] === 'R' && $single[2] === "SR8WXL") :
 		$rx++;
 	endif;
 endforeach;
@@ -39,7 +38,7 @@ endforeach;
 		<div class="offset-md-1 col-12 col-md-6 col-lg-7 col-xl-8">
 			<div class="row gy-1 gy-sm-4">
 				<div class="col-12">
-					<h3 class="h4 mb-5 mb-sm-3"><span class="badge text-bg-warning fs-5">SR8WXL</span></h3>
+					<h3 class="h4 mb-5 mb-sm-3 flex-column flex-sm-row d-flex justify-content-center justify-content-sm-start align-items-center gap-3"><span class="badge text-bg-warning fs-5">SR8WXL</span> <small class="text-body-secondary" style="font-size: 0.6rem;">Przepuszcza stacje w obrębie 10km z ikonami /[ oraz />.</small></h3>
 				</div>
 				<div class="col-12 col-xl-6">
 					<h2 class="h5 mb-3 text-center text-sm-start">Nadane: <span class="badge text-bg-warning fs-5"><?php echo $tx; ?></span> pakiety</h2>
@@ -60,7 +59,6 @@ endforeach;
 
 					if ($single[6] === 'T' && $single[2] === "SR8WXL") :
 						$station = explode(">", $single[7])[0];
-
 						// Zwiększ licznik wystąpień stacji
 						if (!isset($stationCounts[$station])):
 							$stationCounts[$station] = 1;
@@ -80,7 +78,7 @@ endforeach;
 					$station = explode(">", $single[7])[0];
 
 					// Sprawdź, czy liczba wystąpień stacji wynosi więcej niż 1
-					if ($stationCounts[$station] > 1 && !in_array($station, $displayedStations)) :
+					if ($stationCounts[$station] >= 1 && !in_array($station, $displayedStations)) :
 						$displayedStations[] = $station; ?>
 						
 					<div class="row text-center text-sm-start mb-3 mb-sm-0">
@@ -136,7 +134,7 @@ endforeach;
 						$station = explode(">", $single[7])[0];
 
 						// Sprawdź, czy liczba wystąpień stacji wynosi więcej niż 1
-						if ($stationCounts[$station] > 1 && !in_array($station, $displayedStations)) :
+						if ($stationCounts[$station] >= 1 && !in_array($station, $displayedStations)) :
 							$displayedStations[] = $station; ?>
 							
 						<div class="row text-center text-sm-start mb-3 mb-sm-0">
@@ -175,7 +173,7 @@ endforeach;
     $utcDateTime->setTimezone(new DateTimeZone('Europe/Warsaw'));
 
     // Zwróć sformatowany czas lokalny
-    return $utcDateTime->format('d-m-Y H:i:s');
+    return $utcDateTime->format('d.m.Y \o H:i');
 } ?>
 </body>
 </html>
