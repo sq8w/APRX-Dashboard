@@ -29,7 +29,7 @@ endforeach;
 			<h1 class="text-center p-1 p-sm-3 h2">APRX Dashboard <small class="text-body-secondary" style="font-size: 0.6rem;">by <a class="link-warning link-underline-dark link-underline-opacity-0" style="text-decoration: none;" href="https://www.qrz.com/db/sq8w" target="_blank">SQ8W</a></small></h1>
 		</div>
 	</div>
-	<div class="row gy-3 mt-3 mt-sm-5 gy-sm-5 justify-content-center text-center text-sm-start">
+	<div class="row gy-3 mt-3 mt-sm-5 mb-3 mb-sm-5 gy-sm-5 justify-content-center text-center text-sm-start">
 		<div class="col-12 col-md-5 col-lg-4 col-xl-3">
 			<p class="h3 m-0 p-0">👋 Siema!</p>
 			<p class="fs-6 mt-3">Dashboard pokazuje wszystkie nadane oraz odebrane pakiety APRS.</p>
